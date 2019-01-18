@@ -1,5 +1,3 @@
-'use strict';
-
 import express from 'express';
 import * as dotenv from 'dotenv';
 import * as bodyParser from 'body-parser';

@@ -1,5 +1,5 @@
 import express from 'express';
-let pkg = require(__dirname + '/../package.json');
+let pkg = require('../../package.json');
 
 export let info = (req, res) => {
     res.json({
