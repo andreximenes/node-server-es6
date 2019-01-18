@@ -10,4 +10,4 @@ A simple backend server skeleton  with (node, express, sequelize, es6)
 
 3. yarn stat
 
-4. test accessing http://localhost:3000/status
+4. test accessing http://localhost:3000/ or http://localhost:3000/server-info
