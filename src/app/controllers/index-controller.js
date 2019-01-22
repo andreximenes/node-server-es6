@@ -1,7 +1,8 @@
-import express from 'express';
-let pkg = require('../../package.json');
+const express = require('express');
+const pkg = require('../../../package.json');
 
-export let info = (req, res) => {
+
+function info(req, res) {
     res.json({
         message: 'The server is running!',
         version: pkg.version,
@@ -9,3 +10,5 @@ export let info = (req, res) => {
         repository: pkg.repository.url
     });
 }
+
+module.exports = { info };

@@ -1,18 +1,27 @@
-import express from 'express';
-import * as dotenv from 'dotenv';
-import * as bodyParser from 'body-parser';
+const express = require('express');
+const dotenv = require('dotenv');
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 
-// Import Controllers
-import * as indexController from './controllers/index-controller';
 
-// Load enviroment variables in .env file
+// Import Routes
+const indexController = require('./app/controllers/index-controller');
+const usersRoute = require('./app/routes/users-route');
+
+// Load enviroment variables in .env files
 dotenv.config();
+
+// mongoose instance connection url connection
+mongoose.Promise = global.Promise;
+mongoose.connect('mongodb://localhost/node_rest_api', { useNewUrlParser: true }); 
+
 
 // Server express config
 const app = express();
 app.set('port', process.env.PORT || 3000);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use('/users', usersRoute);
 
 /* 
  Routes 
