@@ -10,7 +10,7 @@ const app = require('../../../server');
 describe('Checking if server is running', () => {
     it('Returns a 200 response', (done) => {
         chai.request(app)
-            .get('/server-info')
+            .get('/')
             .end((error, response) => {
                 if (error) done(error);
                 // Now let's check our response
@@ -19,9 +19,9 @@ describe('Checking if server is running', () => {
             });
     });
 
-    it('Cheking return /server-info', (done) => {
+    it('Cheking return info', (done) => {
         chai.request(app)
-            .get('/server-info')
+            .get('/')
             .end((error, response) => {
                 if (error) done(error);
                 expect(response.body).to.be.deep.equal(

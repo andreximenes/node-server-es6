@@ -12,8 +12,8 @@ describe('User Controller', () => {
             return chai.request(app)
                 .post('/users/register')
                 .send({
-                    name: 'John Doe',
-                    email: 'johndoe@example.com',
+                    name: 'Joseraldo Pastor',
+                    email: 'joseraldson@example.com',
                     password: '123456'
                 })
                 .then(response => {
